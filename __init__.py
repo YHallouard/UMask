@@ -20,7 +20,6 @@ __date__ = "02/14/2002"
 
 name = "UMask"
 
-# import sub modules
-from UMask import Mask2Poly
-from UMask import Poly2Mask
+__all__ = ('UMask',)
 
+from . import UMask
