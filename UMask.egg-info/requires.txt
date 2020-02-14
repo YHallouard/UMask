@@ -1,0 +1,6 @@
+pandas
+numpy
+shapely
+imantics
+tqdm
+Pillow

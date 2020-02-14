@@ -1,0 +1,8 @@
+setup.py
+UMask/__init__.py
+UMask.egg-info/PKG-INFO
+UMask.egg-info/SOURCES.txt
+UMask.egg-info/dependency_links.txt
+UMask.egg-info/not-zip-safe
+UMask.egg-info/requires.txt
+UMask.egg-info/top_level.txt

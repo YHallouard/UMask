@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: UMask
+Version: 1.0
+Summary: This Package is a contribution to shapely and imantics. It provides you with a function to convert       Mask pictures into their WKT representation and another to create Mask from WKT object.
+Home-page: UNKNOWN
+Author: Yann Hallouard
+Author-email: UNKNOWN
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
