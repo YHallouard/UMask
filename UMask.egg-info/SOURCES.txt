@@ -1,4 +1,6 @@
+README.md
 setup.py
+UMask/UMask.py
 UMask/__init__.py
 UMask.egg-info/PKG-INFO
 UMask.egg-info/SOURCES.txt

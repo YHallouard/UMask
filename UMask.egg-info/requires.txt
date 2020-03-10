@@ -4,3 +4,4 @@ shapely
 imantics
 tqdm
 Pillow
+pytest
