@@ -18,7 +18,7 @@ from UMask.UMask import Mask2Poly, Poly2Mask
 Mask2Poly(Masks=MaskToTransform, empty_geom=True)
 Poly2Mask(raw_mask=np.zeros((height, width)), polygons='POLYGON EMPTY',)
 ```
-## How to use GEOUMask ?
+## How to use GEOMask ?
 ```python
 from UMask.UMask import Mask2Poly
 from UMask.GEOMask import _get_raster_coords, Mask2GEOPoly
@@ -40,3 +40,7 @@ img_shape = meta['img_shape']
 # Getting Mask Wkt representation in GIS coordinate
 geo_poly = Mask2GEOPoly(raster=raster, poly_wkt=poly, img_shape=img_shape)
 ```
+
+## Next ?
+-----------
+- [ ] GEOPoly2Mask
