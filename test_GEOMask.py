@@ -23,10 +23,26 @@ class TestStringMethods(unittest.TestCase):
         # GIVEN
         path = './test/1709285_RGB.tif'
 
-        expected_res = (2,)
+        im = Image.open(path)
+        expected_res = np.asarray(im.size).shape
 
         # WHEN
         res = np.asarray(_get_raster_coords(path=path)['img_shape']).shape
+
+        # THEN
+        self.assertEqual(expected_res, res)
+
+    def test_get_raster_should_return_shape_result(self):
+        # GIVEN
+        path = './test/1709285_RGB.tif'
+
+        im = Image.open(path)
+        expected_shape = im.size
+
+        expected_res = 0
+
+        # WHEN
+        res = np.sum(np.asarray(_get_raster_coords(path=path)['img_shape']) - expected_shape)
 
         # THEN
         self.assertEqual(expected_res, res)
