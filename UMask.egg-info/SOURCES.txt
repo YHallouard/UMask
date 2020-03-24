@@ -1,5 +1,6 @@
 README.md
 setup.py
+UMask/GEOMask.py
 UMask/UMask.py
 UMask/__init__.py
 UMask.egg-info/PKG-INFO

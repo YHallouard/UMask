@@ -13,7 +13,8 @@ class ValueError(Exception):
 
 def Mask2Poly(Masks=None, empty_geom=True):
     """
-    Creating a WKT representation of shape (polygons) on a Mask. On each Mask this function will return a poly or a multipolygon.
+    Creating a WKT representation of shape (polygons) on a Mask. On each Mask this function will return a poly or a
+    multipolygon.
     Input : Masks = array of shape (nb masks, height, width)
             empty_geom = boolean : if you allow this function to create empty polygons if there is no polygons on it.
             If empty_geom is set to False, Mask2Poly will return a 2pixel height and width triangle as polygon
