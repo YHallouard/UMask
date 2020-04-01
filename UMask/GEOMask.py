@@ -13,6 +13,9 @@ def _get_raster_coords(path=''):
     # Coords computing
     ds = rasterio.open(path)
 
+    # Raster
+    crs = ds.crs.data
+
     coords = np.zeros((4, 2))
     coords[0, :] = [ds.bounds.left, ds.bounds.top]
     coords[1, :] = [ds.bounds.left, ds.bounds.bottom]
@@ -23,7 +26,7 @@ def _get_raster_coords(path=''):
     im = Image.open(path)
     width, height = im.size
 
-    return {'coords':coords, 'img_shape':[width, height]}
+    return {'coords':coords, 'img_shape':[width, height], 'crs': crs}
 
 
 def Mask2GEOPoly(raster=None, poly_wkt=None, img_shape=[None, None]):

@@ -36,6 +36,7 @@ poly = Mask2Poly(Masks=mask, empty_geom=True)
 meta = _get_raster_coords(path=path_to_image)
 raster = meta['coords']
 img_shape = meta['img_shape']
+crs = meta['crs']
 
 # Getting Mask Wkt representation in GIS coordinate
 geo_poly = Mask2GEOPoly(raster=raster, poly_wkt=poly, img_shape=img_shape)
