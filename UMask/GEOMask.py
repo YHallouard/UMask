@@ -26,7 +26,7 @@ def _get_raster_coords(path=''):
     im = Image.open(path)
     width, height = im.size
 
-    return {'coords':coords, 'img_shape':[width, height], 'crs': crs}
+    return {'coords': coords, 'img_shape': [width, height], 'crs': crs}
 
 
 def Mask2GEOPoly(raster=None, poly_wkt=None, img_shape=[None, None]):
@@ -49,7 +49,7 @@ def Mask2GEOPoly(raster=None, poly_wkt=None, img_shape=[None, None]):
 
     # Scale
     #poly_bbox_raster = shapely.affinity.scale(poly_bbox_raster, scale_x, scale_y, origin=(x_old, y_old))
-    shapes_poly = shapely.affinity.scale(shapes_poly, scale_x, -scale_y, origin=(x_shapes, y_shapes))
+    shapes_poly = shapely.affinity.scale(shapes_poly, scale_x, -scale_y, origin=(x_old, y_old))
 
     # Translation
     #poly_bbox_raster = shapely.affinity.translate(poly_bbox_raster, -x_old + x_raster, -y_old + y_raster)
