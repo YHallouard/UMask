@@ -1,11 +1,7 @@
 from PIL import Image
-from PIL import ImageDraw
 import numpy as np
-import os
 import rasterio
-from UMask.UMask import Poly2Mask, Mask2Poly
-from shapely.geometry import Polygon, MultiPolygon, LinearRing
-from shapely.wkt import loads
+from shapely.geometry import Polygon
 import shapely
 
 
