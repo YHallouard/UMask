@@ -32,7 +32,7 @@ def Mask2Poly(Masks=None, empty_geom=True):
         # Only 0 and 1 in the mask
         mask = (Masks[i] > 0.11).astype(np.int8)
 
-        # Extract all polygons in Masks 
+        # Extract all polygons in Masks
         polygons = Mask(mask).polygons()
         points = polygons.points
 
@@ -53,9 +53,9 @@ def Mask2Poly(Masks=None, empty_geom=True):
                     poly.append(p)
                     Area.append(poly[-1].area)
 
-        # empty geomn set to False allow to create a very small triangle to 
+        # empty geomn set to False allow to create a very small triangle to
         # avoid an empty geometry
-        if empty_geom == False:
+        if not empty_geom:
             if len(poly) == 0:
                 mini_mask = np.zeros((4, 4, 1))
                 mini_mask[0, 0:2] = 1
@@ -82,7 +82,7 @@ def Mask2Poly(Masks=None, empty_geom=True):
                             Area.append(poly[-1].area)
 
         new_poly = []
-        if len(poly)>0:
+        if len(poly) > 0:
             # Sort polygons by Area and assign polygons contained by an other as a hole
             r = pd.DataFrame(poly)
             r.columns = ['poly']
@@ -90,7 +90,6 @@ def Mask2Poly(Masks=None, empty_geom=True):
 
             r = r.sort_values(by=['Aera'], ascending=False)
             poly = list(r['poly'].values)
-
 
             i = 0
             while i < len(poly):
@@ -115,7 +114,7 @@ def Mask2Poly(Masks=None, empty_geom=True):
     return POLYGONS
 
 
-#print(Mask2Poly(Masks=np.zeros((3,255,255)), empty_geom=True))
+# print(Mask2Poly(Masks=np.zeros((3,255,255)), empty_geom=True))
 
 def Poly2Mask(raw_mask=None, polygons=None):
     """
@@ -137,7 +136,7 @@ def Poly2Mask(raw_mask=None, polygons=None):
     im = mask
     draw = ImageDraw.Draw(im)
 
-    if str(poly)=='POLYGON EMPTY':
+    if str(poly) == 'POLYGON EMPTY':
         return im
 
     if poly.type.upper() == "MULTIPOLYGON":
@@ -201,4 +200,4 @@ def Poly2Mask(raw_mask=None, polygons=None):
     return im
 
 
-#print(np.array(Poly2Mask(raw_mask=np.zeros((4,4)), polygons='POLYGON EMPTY',)))
+# print(np.array(Poly2Mask(raw_mask=np.zeros((4,4)), polygons='POLYGON EMPTY',)))

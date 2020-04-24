@@ -12,6 +12,7 @@ This module contains :
     * Poly2Mask
 
 """
+from . import UMask
 
 # info
 __version__ = "1.0"
@@ -22,5 +23,3 @@ name = "UMask"
 
 
 __all__ = ('UMask',)
-
-from . import UMask

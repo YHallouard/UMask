@@ -44,11 +44,11 @@ def Mask2GEOPoly(raster=None, poly_wkt=None, img_shape=[None, None]):
     scale_y = np.abs(np.max(raster[:, 1]) - np.min(raster[:, 1])) / np.mean(img_shape[1])
 
     # Scale
-    #poly_bbox_raster = shapely.affinity.scale(poly_bbox_raster, scale_x, scale_y, origin=(x_old, y_old))
+    # poly_bbox_raster = shapely.affinity.scale(poly_bbox_raster, scale_x, scale_y, origin=(x_old, y_old))
     shapes_poly = shapely.affinity.scale(shapes_poly, scale_x, -scale_y, origin=(x_old, y_old))
 
     # Translation
-    #poly_bbox_raster = shapely.affinity.translate(poly_bbox_raster, -x_old + x_raster, -y_old + y_raster)
+    # poly_bbox_raster = shapely.affinity.translate(poly_bbox_raster, -x_old + x_raster, -y_old + y_raster)
     shapes_poly = shapely.affinity.translate(shapes_poly, -x_old + x_raster, -y_old + y_raster)
 
     return shapes_poly.wkt
